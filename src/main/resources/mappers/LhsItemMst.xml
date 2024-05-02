@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aselcni.lhs.LhsCustMst">
+
+	<select id="selectListTypeBig" resultType="LhsTypeBig">
+		{ call dbo.pro_big_select() }
+	</select>
+	
+	<select id="selectListTypeMid" parameterType="LhsTypeMid" resultType="LhsTypeMid">
+		{ call dbo.pro_mid_select(#{big_no}) }
+	</select>
+	
+	<select id="selectListTypeSml" parameterType="LhsTypeSml" resultType="LhsTypeSml">
+		{ call dbo.pro_sml_select(#{big_no},#{mid_no}) }
+	</select>
+	
+	<select id="selectItemCntByitemCd" parameterType="LhsItemMst" resultType="int">
+		{ call dbo.pro_item_selectCntByitemCd(#{item_cd}) }
+	</select>
+	
+	<select id="selectItemByitemCd" statementType="CALLABLE" parameterType="LhsItemMst" resultType="LhsItemMst">
+		{ call dbo.pro_item_selectOne(#{item_cd}) }
+	</select>
+	
+	<insert id="insertItem" statementType="CALLABLE" parameterType="LhsItemMst" >
+		{ call dbo.pro_item_insert(
+			#{item_cd},
+			#{item_nm},
+			#{item_flag},
+			#{cust_cd},
+			#{big_no},
+			#{mid_no},
+			#{sml_no},
+			#{item_spec},
+			#{item_unit},
+			#{item_cost},
+			#{remark},
+			#{item_emp_id}
+		) }
+	</insert>
+	
+	<select id="selectItemCnt" statementType="CALLABLE" parameterType="LhsItemMst" resultType="int">
+		{ call dbo.pro_item_selectCnt(
+			#{item_flag},
+			#{big_no},
+			#{mid_no},
+			#{sml_no},
+			#{searchFilter},
+			#{keyword}
+		) }
+	</select>
+	
+	<select id="selectItem" statementType="CALLABLE" parameterType="LhsItemMst" resultType="LhsItemMst">
+		{ call dbo.pro_item_selectList(
+			#{item_flag},
+			#{big_no},
+			#{mid_no},
+			#{sml_no},
+			#{searchFilter},
+			#{keyword},
+			#{start},
+			#{end}
+		) }
+	</select>
+	
+	<update id="updateItem" statementType="CALLABLE" parameterType="LhsItemMst" >
+		{ call dbo.pro_item_update(
+			#{item_cd},
+			#{item_nm},
+			#{cust_cd},
+			#{big_no},
+			#{mid_no},
+			#{sml_no},
+			#{item_spec},
+			#{item_unit},
+			#{item_cost},
+			#{remark}
+		) }
+	</update>
+	
+	<update id="deleteItem" statementType="CALLABLE" parameterType="LhsItemMst">
+		{ call dbo.pro_item_delete(#{item_cd}) }
+	</update>
+    
+</mapper>

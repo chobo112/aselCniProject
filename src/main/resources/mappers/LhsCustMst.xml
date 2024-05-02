@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aselcni.lhs.LhsCustMst">
+
+    <insert id="insertCust" statementType="CALLABLE" parameterType="LhsCustMst">
+    	{ call dbo.pro_cust_insert(
+    		#{cust_cd},
+    		#{cust_nm},
+    		#{president_nm},
+    		#{biz_no},
+    		#{biz_cond},
+    		#{biz_item},
+    		#{biz_addr},
+    		#{biz_tel},
+    		#{biz_fax},
+    		#{emp_id},
+    		#{biz_flag}
+    	) }
+    </insert>
+    
+    <select id="selectCntCustAll" statementType="CALLABLE" parameterType="int" resultType="int">
+    	{ call dbo.pro_cust_selectCntAll(#{biz_flag}) }
+    </select>
+    
+    <select id="selectCntCust" statementType="CALLABLE" parameterType="LhsCustMst" resultType="int">
+    	{ call dbo.pro_cust_selectCnt(#{biz_flag},#{searchFilter},#{keyword}) }
+    </select>
+    
+    <select id="selectListCust" statementType="CALLABLE" parameterType="LhsCustMst" resultType="LhsCustMst">
+    	{ call dbo.pro_cust_selectList(#{biz_flag},#{searchFilter},#{keyword},#{start},#{end}) }
+    </select>
+    
+    <select id="selectOneCust" statementType="CALLABLE" parameterType="LhsCustMst" resultType="LhsCustMst">
+    	{ call dbo.pro_cust_selectOne(#{cust_cd}) }
+    </select>
+    
+    <update id="deleteOneCust" statementType="CALLABLE" parameterType="LhsCustMst">
+    	{ call dbo.pro_cust_delete(#{cust_cd}) }
+    </update>
+    
+    <update id="updateOneCust" statementType="CALLABLE" parameterType="LhsCustMst">
+    	{ call dbo.pro_cust_update(
+    		#{cust_cd},
+    		#{cust_nm},
+    		#{president_nm},
+    		#{biz_no},
+    		#{biz_cond},
+    		#{biz_item},
+    		#{biz_addr},
+    		#{biz_tel},
+    		#{biz_fax}
+    	) }
+    </update>
+    
+    <select id="selectListCustByFlag" parameterType="int" resultType="LhsCustMst">
+    	select *
+    	from tb_custmst
+    	where biz_flag = #{item_flag}	
+    </select>
+    
+</mapper>

@@ -1,0 +1,209 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+/*--------------------------------------------------------------
+# section
+--------------------------------------------------------------*/
+.card {
+	margin-bottom: 10px;
+	background-color: white;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-body {
+	padding: 20px 20px 20px 20px;
+}
+
+.card-body .nav {
+    margin-bottom: 30px;
+    border-bottom: 0;
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: 600;
+}
+
+/* controller */
+.top {
+    display: flex;
+    justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.top .top-title {
+	height: 40px;
+	line-height: 40px;
+	font-family: 'NanumSquare', sans-serif;
+    color: #486ef3;
+    font-size: 18px;
+    font-weight: 800
+}
+
+.top .return-add {
+	width: 70px;
+	height: 40px;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+/* search */
+.search {
+	border: 1px solid #dee2e6;
+	padding: 10px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.search> div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.search> div:last-child {
+	margin-bottom: 0;
+}
+
+.search div div {
+	width: 33%;
+}
+
+.search .search-btn-box {
+	display: flex;
+	justify-content: center;
+}
+
+.search-btn-box .search-btn {
+	width: 70px;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+/* table */
+.table {
+    font-family: 'NanumSquare', sans-serif;
+}
+
+.table tr th:nth-child(1) {
+    width: 5%;
+}
+
+.table tr th:nth-child(2) {
+    width: 10%;
+}
+
+.table tr th:nth-child(3) {
+    width: 10%;
+}
+
+.table tr th:nth-child(4) {
+    width: 10%;
+}
+
+.table tr th:nth-child(5) {
+    width: 15%;
+}
+
+.table tr th:nth-child(6) {
+    width: 25%;
+}
+
+.table tr th:nth-child(7) {
+    width: 7%;
+}
+
+.table tr th:nth-child(8) {
+    width: 10%;
+}
+
+.table tr th:nth-child(9) {
+    width: 8%;
+}
+
+tbody tr {
+	height: 30px;
+}
+
+tbody tr td, tbody tr th {
+	line-height: 30px;
+}
+
+.return-delete {
+	display: flex;
+	align-items: center;
+	height: 30px;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.page-navigation .pagination {
+    margin-bottom: 0;
+}
+
+/* return-datail */
+.return-detail {
+	position: absolute;
+    display: none;
+	top: 20%;
+	left: 43%;
+	background-color: white;
+	margin: 0 auto;
+	padding: 20px;
+    width: 30%;
+    border: 1px solid rgba(128, 128, 128, 0.562);
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+	z-index: 1;
+}
+
+.return-detail .return-detail-title {
+	text-align: center;
+    font-family: 'NanumSquare', sans-serif;
+    color: #486ef3;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.return-detail .return-detail-body {
+	font-family: 'NanumSquare', sans-serif;
+}
+
+.return-detail-body> div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.return-detail-body> div> .return-detail-content:first-child {
+	margin-right: 10px;
+}
+
+.return-detail-body .return-detail-content {
+	border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+	height: 50px;
+	line-height: 50px;
+	width: 45%;
+}
+
+.return-detail-content span:first-child {
+	margin-right: 10px;
+	font-weight: 700;
+}
+
+.return-detail  .return-detail-btn-list {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+.return-no {
+	color: #717ff5;
+}
+
+.return-no:hover {
+	cursor: pointer;
+}

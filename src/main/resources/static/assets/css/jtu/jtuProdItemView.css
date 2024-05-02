@@ -1,0 +1,78 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* 입력 칸 크기 조절 */
+/* .prodItemDate {
+	width: 130px;
+	height: 40px; 
+	font-size: 20px;
+	border: none;
+	display: flex-wrap; align-items: center; justify-content: space-between;
+	
+}
+ */
+ 
+.prodItemDate:hover {
+	cursor: pointer;
+}
+
+#prodEndDate{
+	width: 130px;
+}
+
+#main > div.card > section > table > tbody > tr:hover {
+	cursor: pointer;
+}
+
+.label-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.moving-text {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: none; /* 초기 상태에서는 애니메이션 없음 */
+}
+
+.moving-animation {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-60%); }
+}
+
+
+.category-search-list-container {
+    overflow-y: auto; /* 수직 방향으로 스크롤 허용 */
+    max-height: 250px; /* 컨테이너의 최대 높이 설정, 필요에 따라 조정 */
+}
+
+/* 드롭다운 메뉴 7개정도만 보이게 */
+#workProdNoRegiModalList {
+    max-height: 336px; /* 48px * 7 = 336px */
+    overflow-y: auto;  /* 스크롤바 추가 */
+}
